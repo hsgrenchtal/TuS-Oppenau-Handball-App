@@ -1,15 +1,16 @@
-function showPage(id) {
-  document.querySelectorAll(".page").forEach(page => {
-    page.classList.toggle("active", page.id === id);
+(() => {
+  const pages = [...document.querySelectorAll('.page')];
+  const navButtons = [...document.querySelectorAll('.navbtn')];
+  function showPage(name) {
+    if (!document.getElementById(name)) return;
+    pages.forEach(p => p.classList.toggle('active', p.id === name));
+    navButtons.forEach(b => b.classList.toggle('active', b.dataset.page === name));
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  document.addEventListener('click', e => {
+    const control = e.target.closest('[data-page]');
+    if (!control) return;
+    e.preventDefault();
+    showPage(control.dataset.page);
   });
-
-  document.querySelectorAll("nav [data-page]").forEach(button => {
-    button.classList.toggle("active", button.dataset.page === id);
-  });
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-document.querySelectorAll("[data-page]").forEach(button => {
-  button.addEventListener("click", () => showPage(button.dataset.page));
-});
+})();
