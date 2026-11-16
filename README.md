@@ -1,7 +1,10 @@
-TuS Oppenau App – Live-Tabellen Versuch
+TuS Oppenau App – Trainingszeiten und Spielplan-Übersicht
 
-Dieses Paket enthält die vollständige App. Im Bereich „Spielplan“ wird nun die offizielle BWHV-Ergebnisseite direkt eingebettet.
+Änderungen in dieser Version:
+- Trainingszeiten Herren 1 ergänzt: Dienstag 20:00–21:30 Uhr und Freitag 20:00–21:30 Uhr, jeweils GBH Oppenau.
+- Trainingszeit Herren 2 ergänzt: Mittwoch 20:00–21:30 Uhr, GBH Oppenau.
+- Trainingszeiten sind optisch in Jugend und Herren getrennt.
+- Spielplanbereich ist in Herren 1, Herren 2 und Jugend / HSG Renchtal getrennt.
+- Die offizielle BWHV-/Handball4all-Übersicht bleibt als gemeinsame Verbandsübersicht erhalten.
 
-Wichtig: Der BWHV bzw. Handball4all kann externe Einbettungen aus Sicherheitsgründen blockieren. Für diesen Fall bleibt ein gut sichtbarer Link zur offiziellen Seite als Ausweichlösung enthalten. Eine echte Datenintegration innerhalb der App ist nur möglich, wenn der Verband eine öffentlich nutzbare Schnittstelle bzw. Einbettung bereitstellt.
-
-Installation: Alle Dateien im ZIP in das Hauptverzeichnis des GitHub-Repositories hochladen und vorhandene Dateien überschreiben. tus-hintergrund.jpg muss neben index.html liegen.
+Installation: Alle Dateien aus diesem Ordner in das Hauptverzeichnis des GitHub-Repositories hochladen und vorhandene Dateien überschreiben. tus-hintergrund.jpg muss neben index.html liegen.
