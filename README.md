@@ -1,16 +1,15 @@
-# TuS Oppenau App – Herren 1 & Herren 2
+# TuS Oppenau App – BWHV-Spielplan-Einbettung
 
-Dieses Update verbessert den Bereich „Spielplan & Ergebnisse“ und verknüpft die beiden Herrenmannschaften mit den offiziellen TuS-Mannschaftsseiten sowie dem offiziellen BWHV-Spielbetriebsportal.
+Dieses Update ergänzt den Bereich „Spielplan & Ergebnisse“ um eine eingebettete Ansicht des offiziellen BWHV-Ergebnisbereichs.
 
 ## Enthalten
-- Herren 1: offizielle TuS-Teamseite
-- Herren 2: offizielle TuS-Teamseite
-- Offizieller BWHV-Spielbetrieb für Spielpläne, Ergebnisse und Tabellen
-- Jugend- und Trainingsbereiche bleiben enthalten
-- TuS-Hintergrundbild im korrekten Stammverzeichnis
+- eingebettete BWHV-Seite „Ergebnisse/Tabellen“
+- Ausweichlink zum Öffnen außerhalb der App
+- Links zu den TuS-Mannschaftsseiten Herren 1 und Herren 2
+- bestehende App, Trainingszeiten, Teams und Hintergrundbild bleiben erhalten
 
 ## Installation
-Alle fünf Dateien direkt in das Stammverzeichnis des GitHub-Repositories laden und vorhandene Dateien ersetzen.
+Alle fünf Dateien aus diesem ZIP direkt in das Stammverzeichnis des GitHub-Repositories laden und vorhandene Dateien ersetzen.
 
-## Datenaktualität
-Die App zeigt in diesem Schritt noch keine Spielstände oder Tabellen direkt im eigenen Bildschirm an. Sie verlinkt auf offizielle Quellen. Eine automatische Anzeige wird erst ergänzt, wenn eine verlässliche und zulässige Datenschnittstelle oder ein offizielles Einbettungsangebot verfügbar ist.
+## Technischer Hinweis
+Die Einbettung funktioniert nur, wenn die BWHV-Website das Anzeigen in einem fremden Frame zulässt. Falls der Verband dies durch seine Sicherheitseinstellungen blockiert, funktioniert der Button „Extern öffnen“ weiterhin.
