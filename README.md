@@ -1,17 +1,15 @@
-# TuS Oppenau / HSG Renchtal – Jugend-Update
+# TuS Oppenau Handball-App – Herren & Spielplan Update
 
-Dieses Update enthält:
-- `index.html` – Jugendmannschaften und die 18 Trainingszeiteinträge 2026/2027
-- `app.js` – Navigation
-- `manifest.webmanifest` – Web-App-Metadaten
+Dieses Update ergänzt:
+- Herren 1 und Herren 2 als die beiden Herrenmannschaften
+- einen erweiterten Bereich „Spielplan & Ergebnisse“
+- Verlinkungen zu den offiziellen Spielbetriebs- und Vereinsseiten
 
-## Einspielen in GitHub
-1. ZIP entpacken.
-2. Im Repository `TuS-Oppenau-Handball-App` auf **Add file → Upload files** gehen.
-3. `index.html`, `app.js` und `manifest.webmanifest` im Hauptverzeichnis hochladen und die vorhandenen Dateien ersetzen.
-4. `tus-hintergrund.jpg` im Repository behalten; diese ZIP enthält das Bild absichtlich nicht.
-5. **Commit changes** ausführen.
-6. GitHub Pages veröffentlicht die Änderungen automatisch.
+## Installation
+1. ZIP-Datei entpacken.
+2. `index.html`, `app.js`, `manifest.webmanifest` und `README.md` im GitHub-Repository hochladen und vorhandene Dateien ersetzen.
+3. Die vorhandene Datei `tus-hintergrund.jpg` im Repository-Stammverzeichnis NICHT löschen.
+4. GitHub Pages aktualisiert die App nach dem Commit.
 
 ## Hinweis
-Die vorhandenen Mannschafts- und Trainingsangaben wurden aus der zuletzt vorliegenden Vereinsübersicht übernommen. Spielplan- und Sponsoreninhalte sind noch nicht angebunden.
+Die Saison-Spielpläne des Baden-Württembergischen Handball-Verbands werden 2026/27 nicht durchgehend auf handball.net angezeigt. Die Links führen deshalb zum offiziellen Spielbetrieb (Handball4all) bzw. zu den Vereinsberichten. Die Daten sind in diesem Update nicht künstlich in die App kopiert.
