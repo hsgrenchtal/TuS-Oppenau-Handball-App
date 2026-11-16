@@ -1,18 +1,17 @@
-# TuS-Oppenau-App
+# TuS Oppenau / HSG Renchtal – Jugend-Update
 
-## Dateien
-- `index.html`: App-Oberfläche und Inhalte
-- `app.js`: Navigation zwischen den App-Seiten
-- `assets/tus-hintergrund.jpg`: vom Verein bereitgestelltes Hintergrundmotiv
-- `manifest.webmanifest`: Basis für die spätere Installation als Web-App
+Dieses Update enthält:
+- `index.html` – Jugendmannschaften und die 18 Trainingszeiteinträge 2026/2027
+- `app.js` – Navigation
+- `manifest.webmanifest` – Web-App-Metadaten
 
-## Veröffentlichung mit GitHub Pages
-1. Alle Dateien und den Ordner `assets` in das Stammverzeichnis des GitHub-Repositories hochladen.
-2. Darauf achten, dass `index.html` direkt im Stammverzeichnis liegt.
-3. In GitHub unter Settings → Pages die Veröffentlichung aus dem Branch `main` und Ordner `/ (root)` aktivieren.
-4. Nach dem Veröffentlichen die Pages-Adresse öffnen.
+## Einspielen in GitHub
+1. ZIP entpacken.
+2. Im Repository `TuS-Oppenau-Handball-App` auf **Add file → Upload files** gehen.
+3. `index.html`, `app.js` und `manifest.webmanifest` im Hauptverzeichnis hochladen und die vorhandenen Dateien ersetzen.
+4. `tus-hintergrund.jpg` im Repository behalten; diese ZIP enthält das Bild absichtlich nicht.
+5. **Commit changes** ausführen.
+6. GitHub Pages veröffentlicht die Änderungen automatisch.
 
-## Hinweise
-Die Trainingszeiten enthalten die bisher vorliegenden Angaben. Noch nicht bestätigte Zeiten (z. B. Mädels, Bambinis Oberkirch und E1/3) sind ausdrücklich als offen gekennzeichnet.
-Spielplan und Sponsorenliste sind derzeit Platzhalter und noch nicht live mit externen Datenquellen verbunden.
-Das T im runden Kopfbereich ist ein vorläufiger Platzhalter; das Vereinswappen ist im Hintergrundmotiv enthalten.
+## Hinweis
+Die vorhandenen Mannschafts- und Trainingsangaben wurden aus der zuletzt vorliegenden Vereinsübersicht übernommen. Spielplan- und Sponsoreninhalte sind noch nicht angebunden.

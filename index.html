@@ -4,58 +4,102 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#090909">
-<meta name="description" content="TuS Oppenau Handball – Vereinsapp">
-<title>TuS Oppenau | Vereinsapp</title>
+<meta name="description" content="TuS Oppenau und HSG Renchtal – Jugendhandball">
+<title>TuS Oppenau | Handball</title>
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--red:#e21b23;--bg:#08090b;--white:#f7f7f8;--muted:#a8abb2;--line:rgba(255,255,255,.14);--panel:rgba(20,21,24,.94)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;padding-bottom:92px;color:var(--white);background:var(--bg);font-family:Inter,system-ui,sans-serif}
-body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(5,6,8,.35),rgba(5,6,8,.92) 48%,#08090b),url("tus-hintergrund.jpg") center top/cover no-repeat}
-.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;background:rgba(7,8,10,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
-.brand{display:flex;align-items:center;gap:11px}.crest{width:44px;height:44px;border:2px solid white;border-radius:10px;display:grid;place-items:center;background:#f5f5f5;color:#111;box-shadow:0 0 0 3px #e21b2355;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:16px;line-height:.9;text-align:center}.crest span{display:block;color:var(--red);font-size:10px}
-.brand-name{font-weight:800;font-size:16px;letter-spacing:.02em}.brand-sub{color:var(--muted);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-top:3px}
+:root{--red:#e21b23;--bg:#090909;--white:#f7f7f8;--muted:#b8b8b8;--line:rgba(255,255,255,.15);--card:rgba(18,18,20,.94)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--white);background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:92px}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(0,0,0,.38),rgba(0,0,0,.94) 54%,#090909),url("tus-hintergrund.jpg") center top/cover no-repeat}
+.topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 17px;background:rgba(8,8,9,.93);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:11px}.crest{width:43px;height:49px;display:grid;place-content:center;text-align:center;background:#fff;color:#111;border:2px solid #ddd;border-radius:10px 10px 15px 15px;font-weight:900;font-size:17px;line-height:1}.crest small{color:var(--red);font-size:10px}.brand strong{display:block;font-size:16px;letter-spacing:.03em}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.14em;margin-top:3px;text-transform:uppercase}
 .insta{color:white;text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:9px 12px;font-size:12px;font-weight:700;white-space:nowrap}
-main{width:min(100%,900px);margin:auto;padding:18px 16px 30px}
-.hero{min-height:340px;border:1px solid var(--line);border-radius:24px;overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:25px 22px;background:linear-gradient(90deg,#000c,transparent),linear-gradient(0deg,#000d,transparent 70%),url("tus-hintergrund.jpg") center 22%/cover no-repeat,linear-gradient(135deg,#b80e17,#090909 58%);box-shadow:0 18px 55px #0006}
-.hero-content{position:relative;z-index:1;max-width:560px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
-h1{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(50px,12vw,78px);line-height:.88;margin:10px 0 12px;text-transform:uppercase}h1 em{color:var(--red);font-style:normal}.hero p{margin:0;color:#e3e3e5;font-size:14px;line-height:1.55;max-width:430px}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;border-radius:99px;padding:0 17px;border:1px solid var(--line);cursor:pointer;color:white;background:#ffffff14;text-decoration:none;font-weight:800;font-size:13px}.btn.primary{background:var(--red);border-color:var(--red)}
-.head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:28px 2px 13px}.head h2,.page-title{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.04em;margin:0}.head h2{font-size:29px}.head span{color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.tile{appearance:none;text-align:left;color:white;cursor:pointer;min-height:122px;padding:16px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(145deg,#25262af7,#0d0e10f7);display:flex;flex-direction:column;justify-content:space-between}.symbol{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:#e21b2329;color:#ff6268;font-size:20px;font-weight:900}.tile strong{display:block;font-size:15px;margin-top:12px}.tile small{color:var(--muted);font-size:11px;margin-top:4px;display:block}
-.news,.panel{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:17px;box-shadow:0 12px 35px #0003}.label{color:#ff656b;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.news h3{font-size:18px;margin:8px 0 7px}.news p,.panel p{color:#c4c6cb;font-size:13px;line-height:1.6;margin:0}
-.page{display:none}.page.active{display:block;animation:fade .2s ease-out}@keyframes fade{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}
-.backline{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;margin:8px 0 14px}.backline button{color:white;border:0;background:none;font-weight:800;padding:6px 0}.page-title{font-size:38px;margin:8px 0 14px}
-.rows{display:grid;gap:10px;margin-top:14px}.rowitem{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border-radius:14px;background:#1f2024eb;border:1px solid var(--line)}.rowitem strong{font-size:13px}.rowitem small{color:var(--muted);display:block;font-size:11px;margin-top:4px}.tag{background:#e21b232e;color:#ff777c;border:1px solid #e21b2359;border-radius:99px;padding:6px 9px;font-size:10px;font-weight:800}
-nav.bottom{position:fixed;z-index:30;bottom:0;left:0;right:0;padding:9px 10px calc(9px + env(safe-area-inset-bottom));background:#0a0b0df2;border-top:1px solid var(--line);backdrop-filter:blur(18px);display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
-.navbtn{border:0;background:transparent;color:#9da0a7;padding:7px 2px 5px;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;font-weight:700;cursor:pointer}.navbtn .ico{font-size:19px;line-height:1}.navbtn.active{color:white;background:#e21b232f}.navbtn.active .ico{color:#ff555c}
-footer{text-align:center;color:#858991;font-size:10px;letter-spacing:.08em;padding:25px 10px 8px}
-@media(min-width:650px){main{padding:26px 24px 40px}.hero{min-height:410px;padding:34px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.topbar{padding-inline:max(22px,calc((100vw - 850px)/2))}.bottom{left:50%!important;right:auto!important;transform:translateX(-50%);width:min(620px,100%);border:1px solid var(--line);border-bottom:0;border-radius:18px 18px 0 0}}
+main{width:min(900px,100%);margin:auto;padding:18px 16px 30px}.page{display:none}.page.active{display:block}
+.hero{min-height:370px;border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;align-items:flex-end;padding:24px 21px;background:linear-gradient(90deg,rgba(0,0,0,.68),rgba(0,0,0,.08)),linear-gradient(0deg,#000e,transparent 75%),url("tus-hintergrund.jpg") center 23%/cover no-repeat,linear-gradient(135deg,#a90d15,#090909 65%);box-shadow:0 18px 50px #0008}
+.kicker{font-size:11px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}.hero h1{font-family:Impact,"Arial Narrow",sans-serif;font-size:clamp(52px,12vw,78px);line-height:.88;text-transform:uppercase;margin:12px 0}.hero h1 em{color:var(--red);font-style:normal}.hero p{font-size:14px;line-height:1.6;color:#e6e6e6;max-width:480px;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:19px}.btn{border:1px solid var(--line);border-radius:99px;padding:13px 17px;background:#ffffff16;color:white;font-size:13px;font-weight:800;text-decoration:none;cursor:pointer}.btn.primary{background:var(--red);border-color:var(--red)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:27px 2px 13px}.section-head h2,.page-title{font-family:Impact,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.04em;margin:0}.section-head h2{font-size:29px}.section-head span{font-size:10px;color:var(--muted);letter-spacing:.14em;font-weight:800}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.tile{min-height:118px;text-align:left;border:1px solid var(--line);border-radius:17px;padding:15px;background:linear-gradient(145deg,#29292cf2,#101012f2);color:white;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}.tile .ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#e21b2335;color:#ff686d;font-size:19px;font-weight:900}.tile strong{font-size:14px;display:block;margin-top:10px}.tile small{font-size:11px;color:var(--muted);display:block;margin-top:4px}
+.panel{border:1px solid var(--line);border-radius:17px;background:var(--card);padding:16px;margin-top:12px}.panel p{font-size:13px;line-height:1.6;color:#d0d0d2;margin:0}.page-title{font-size:38px;margin:8px 0 15px}.back{border:0;background:none;color:#ddd;padding:5px 0 13px;font-size:12px;font-weight:800;cursor:pointer}
+.team-list,.schedule{display:grid;gap:10px;margin-top:14px}.team,.session{border:1px solid var(--line);border-radius:15px;background:var(--card);padding:14px}.team-top,.session-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.team strong,.session strong{font-size:14px}.team small,.session small{display:block;color:var(--muted);font-size:11px;line-height:1.5;margin-top:5px}.pill{white-space:nowrap;border-radius:99px;padding:6px 9px;background:#e21b2330;border:1px solid #e21b235b;color:#ff777b;font-size:10px;font-weight:800}
+.session{display:grid;grid-template-columns:74px 1fr;gap:12px}.day{font-size:12px;font-weight:900;color:#ff777b;text-transform:uppercase;letter-spacing:.06em}.time{font-size:14px;font-weight:800;margin-top:4px}.place{margin-top:7px;color:#d5d5d7;font-size:11px}.note{color:#ffb5b7!important}
+.notice{border-left:3px solid var(--red);padding:11px 13px;background:#e21b2317;border-radius:0 12px 12px 0;color:#e8e8e8;font-size:12px;line-height:1.55;margin-top:14px}
+nav.bottom{position:fixed;z-index:20;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,1fr);gap:3px;padding:9px 8px calc(9px + env(safe-area-inset-bottom));background:#09090bf5;border-top:1px solid var(--line);backdrop-filter:blur(15px)}
+.navbtn{border:0;background:transparent;color:#a5a5aa;border-radius:13px;padding:8px 2px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;font-weight:800;cursor:pointer}.navbtn .ico{font-size:19px}.navbtn.active{background:#e21b232e;color:white}.navbtn.active .ico{color:#ff6268}
+footer{text-align:center;color:#888;font-size:10px;letter-spacing:.12em;padding:24px 5px}
+@media(min-width:650px){main{padding:25px 24px 40px}.hero{min-height:420px;padding:34px}.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.team-list{grid-template-columns:repeat(2,minmax(0,1fr))}nav.bottom{left:50%;right:auto;transform:translateX(-50%);width:min(620px,100%);border-radius:18px 18px 0 0;border:1px solid var(--line);border-bottom:0}}
 </style>
 </head>
 <body>
-<header class="topbar"><div class="brand"><div class="crest">TUS<span>1905</span></div><div><div class="brand-name">TuS OPPENAU</div><div class="brand-sub">Handball · Ein Team. Ein Ziel.</div></div></div><a class="insta" href="https://www.instagram.com/tus_oppenau/" target="_blank" rel="noopener">◎ Instagram</a></header>
+<header class="topbar"><div class="brand"><div class="crest">TUS<small>1905</small></div><div><strong>TuS OPPENAU</strong><small>Handball · Ein Team. Ein Ziel.</small></div></div><a class="insta" href="https://www.instagram.com/tus_oppenau/" target="_blank" rel="noopener">◎ Instagram</a></header>
 <main>
 <section id="home" class="page active">
-<div class="hero"><div class="hero-content"><div class="eyebrow">Offizielle Vereinsapp</div><h1>Ein Team.<br><em>Ein Ziel.</em></h1><p>Alles rund um den Handball beim TuS Oppenau – Mannschaften, Trainingszeiten, Spieltage und Vereinsnews an einem Ort.</p><div class="actions"><button class="btn primary" data-page="teams">Mannschaften entdecken →</button><button class="btn" data-page="training">Trainingszeiten</button></div></div></div>
-<div class="head"><h2>Dein Verein. Dein Überblick.</h2><span>TuS 1905</span></div>
-<div class="grid">
-<button class="tile" data-page="teams"><span class="symbol">♟</span><span><strong>Mannschaften</strong><small>Alle Teams im Überblick</small></span></button>
-<button class="tile" data-page="training"><span class="symbol">◷</span><span><strong>Trainingszeiten</strong><small>Wann und wo trainiert wird</small></span></button>
-<button class="tile" data-page="matches"><span class="symbol">▦</span><span><strong>Spielplan</strong><small>Spiele und Spieltage</small></span></button>
-<button class="tile" data-page="news"><span class="symbol">✦</span><span><strong>Neuigkeiten</strong><small>Aktuelles aus dem Verein</small></span></button>
-<button class="tile" data-page="sponsors"><span class="symbol">★</span><span><strong>Sponsoren</strong><small>Unsere Unterstützer</small></span></button>
-<a class="tile" href="https://www.instagram.com/tus_oppenau/" target="_blank" rel="noopener"><span class="symbol">◎</span><span><strong>Instagram</strong><small>@tus_oppenau</small></span></a>
-</div>
-<div class="head"><h2>Aktuelles</h2><span>Vereinsleben</span></div><article class="news"><div class="label">Willkommen</div><h3>Schön, dass du da bist!</h3><p>Die neue Vereinsapp des TuS Oppenau wächst Schritt für Schritt. Hier findest du künftig die wichtigsten Informationen rund um unseren Handball.</p></article><footer>TuS OPPENAU HANDBALL · EIN TEAM. EIN ZIEL.</footer>
+<div class="hero"><div><div class="kicker">Offizielle Vereinsapp</div><h1>Ein Team.<br><em>Ein Ziel.</em></h1><p>Alles rund um den Handball beim TuS Oppenau und der HSG Renchtal – Mannschaften, Trainingszeiten und Vereinsnews an einem Ort.</p><div class="actions"><button class="btn primary" data-page="teams">Mannschaften entdecken →</button><button class="btn" data-page="training">Trainingszeiten</button></div></div></div>
+<div class="section-head"><h2>Dein Verein. Dein Überblick.</h2><span>TUS 1905</span></div>
+<div class="tiles">
+<button class="tile" data-page="teams"><span class="ico">♟</span><span><strong>Mannschaften</strong><small>Jugendteams im Überblick</small></span></button>
+<button class="tile" data-page="training"><span class="ico">◷</span><span><strong>Trainingszeiten</strong><small>Zeiten und Hallen</small></span></button>
+<button class="tile" data-page="matches"><span class="ico">▦</span><span><strong>Spielplan</strong><small>Spiele und Ergebnisse</small></span></button>
+<button class="tile" data-page="news"><span class="ico">✦</span><span><strong>Neuigkeiten</strong><small>Aktuelles aus dem Verein</small></span></button>
+<button class="tile" data-page="sponsors"><span class="ico">★</span><span><strong>Sponsoren</strong><small>Unsere Unterstützer</small></span></button>
+<a class="tile" href="https://www.instagram.com/tus_oppenau/" target="_blank" rel="noopener"><span class="ico">◎</span><span><strong>Instagram</strong><small>@tus_oppenau</small></span></a>
+</div><footer>TUS OPPENAU HANDBALL · EIN TEAM. EIN ZIEL.</footer>
 </section>
-<section id="teams" class="page"><div class="backline"><button data-page="home">← Startseite</button><span>/ Mannschaften</span></div><h2 class="page-title">Mannschaften</h2><div class="panel"><p>Hier findest du künftig die Mannschaften des TuS Oppenau und der HSG Renchtal mit Ansprechpartnern und weiteren Informationen.</p></div><div class="rows"><div class="rowitem"><div><strong>Jugendhandball</strong><small>Bambinis bis A-Jugend</small></div><span class="tag">Jugend</span></div><div class="rowitem"><div><strong>Aktive Mannschaften</strong><small>TuS Oppenau / HSG Renchtal</small></div><span class="tag">Aktive</span></div></div></section>
-<section id="training" class="page"><div class="backline"><button data-page="home">← Startseite</button><span>/ Trainingszeiten</span></div><h2 class="page-title">Trainingszeiten</h2><div class="panel"><p>Die Trainingsübersicht wird hier mit den bestätigten Zeiten und Hallen der einzelnen Mannschaften ergänzt. Bitte beachte mögliche Änderungen durch den Verein.</p></div><div class="rows"><div class="rowitem"><div><strong>Oppenau</strong><small>Günter-Bimmerle-Halle</small></div><span class="tag">GBH</span></div><div class="rowitem"><div><strong>Oberkirch</strong><small>Hallenstandort Oberkirch</small></div><span class="tag">HFG</span></div></div></section>
-<section id="matches" class="page"><div class="backline"><button data-page="home">← Startseite</button><span>/ Spielplan</span></div><h2 class="page-title">Spielplan</h2><div class="panel"><p>Die Spielpläne für alle TuS- und HSG-Mannschaften werden hier ergänzt. Bis zur Anbindung einer aktuellen Spielplanquelle bitte die offiziellen Vereins- und Verbandsinformationen beachten.</p></div></section>
-<section id="news" class="page"><div class="backline"><button data-page="home">← Startseite</button><span>/ Neuigkeiten</span></div><h2 class="page-title">Neuigkeiten</h2><div class="panel"><p>Hier erscheinen künftig Berichte, Ergebnisse, Veranstaltungen und Neuigkeiten aus dem TuS Oppenau und der HSG Renchtal.</p><p style="margin-top:12px"><a class="btn primary" href="https://www.instagram.com/tus_oppenau/" target="_blank" rel="noopener">Instagram öffnen ↗</a></p></div></section>
-<section id="sponsors" class="page"><div class="backline"><button data-page="home">← Startseite</button><span>/ Sponsoren</span></div><h2 class="page-title">Unsere Sponsoren</h2><div class="panel"><p>Unsere Sponsoren unterstützen den Handball in Oppenau. Die bestehende Sponsorenliste der Vereinswebsite wird nach Übernahme hier dargestellt.</p></div></section>
+
+<section id="teams" class="page">
+<button class="back" data-page="home">← ZURÜCK ZUR STARTSEITE</button><h2 class="page-title">Jugendmannschaften</h2>
+<div class="panel"><p>Die Jugendmannschaften spielen unter der HSG Renchtal. Die Übersicht zeigt die Teams und die Jahrgänge für das Spieljahr 2026/2027.</p></div>
+<div class="team-list">
+<div class="team"><div class="team-top"><div><strong>Mädels</strong><small>Jugendtraining · Oppenau</small></div><span class="pill">Mädels</span></div></div>
+<div class="team"><div class="team-top"><div><strong>Bambinis Oppenau</strong><small>Jahrgänge 2021 und jünger</small></div><span class="pill">Oppenau</span></div></div>
+<div class="team"><div class="team-top"><div><strong>Bambinis / Minis Oberkirch</strong><small>Minis: Jahrgang 2020 und jünger · Bambinis: 2021 und jünger</small></div><span class="pill">Oberkirch</span></div></div>
+<div class="team"><div class="team-top"><div><strong>F-Jugend Oberkirch</strong><small>Jahrgänge 2018/2019</small></div><span class="pill">F-Jugend</span></div></div>
+<div class="team"><div class="team-top"><div><strong>E1/3-Jugend</strong><small>Jahrgänge 2016/2017</small></div><span class="pill">E-Jugend</span></div></div>
+<div class="team"><div class="team-top"><div><strong>E2-Jugend</strong><small>Jahrgänge 2016/2017</small></div><span class="pill">E-Jugend</span></div></div>
+<div class="team"><div class="team-top"><div><strong>D1-Jugend</strong><small>Jahrgänge 2014/2015</small></div><span class="pill">D-Jugend</span></div></div>
+<div class="team"><div class="team-top"><div><strong>D2-Jugend</strong><small>Jahrgänge 2014/2015</small></div><span class="pill">D-Jugend</span></div></div>
+<div class="team"><div class="team-top"><div><strong>D3-Jugend</strong><small>Jahrgänge 2014/2015</small></div><span class="pill">D-Jugend</span></div></div>
+<div class="team"><div class="team-top"><div><strong>C-Jugend</strong><small>Jahrgänge 2012/2013</small></div><span class="pill">C-Jugend</span></div></div>
+<div class="team"><div class="team-top"><div><strong>A-Jugend</strong><small>Jahrgänge 2008/2009</small></div><span class="pill">A-Jugend</span></div></div>
+</div>
+<div class="notice">E-Jugend und jünger in Oberkirch nur mit Anmeldung. Kontakt: <a href="mailto:jugend@handball-oberkirch.de" style="color:#fff">jugend@handball-oberkirch.de</a></div>
+</section>
+
+<section id="training" class="page">
+<button class="back" data-page="home">← ZURÜCK ZUR STARTSEITE</button><h2 class="page-title">Trainingszeiten</h2>
+<div class="panel"><p>Spieljahr 2026/2027 · Bitte beachtet mögliche kurzfristige Änderungen durch die Trainer und den Verein.</p></div>
+<div class="schedule">
+<div class="session"><div><div class="day">Mittwoch</div><div class="time">16:30–18:00</div></div><div><strong>Mädels</strong><div class="place">GBH / FRS · Oppenau</div></div></div>
+<div class="session"><div><div class="day">Samstag</div><div class="time">11:00–12:00</div></div><div><strong>Bambinis Oppenau</strong><div class="place">GBH · Oppenau</div></div></div>
+<div class="session"><div><div class="day">Dienstag</div><div class="time">16:30–17:30</div></div><div><strong>Bambinis / Minis Oberkirch</strong><div class="place">HFG · Oberkirch</div></div></div>
+<div class="session"><div><div class="day">Donnerstag</div><div class="time">17:00–18:00</div></div><div><strong>F-Jugend Oberkirch</strong><div class="place">HFG · Oberkirch</div></div></div>
+<div class="session"><div><div class="day">Dienstag</div><div class="time">17:30–19:00</div></div><div><strong>E1/3-Jugend</strong><div class="place">HFG · Oberkirch</div></div></div>
+<div class="session"><div><div class="day">Donnerstag</div><div class="time">18:00–19:00</div></div><div><strong>E1/3-Jugend</strong><div class="place">HFG · Oberkirch</div></div></div>
+<div class="session"><div><div class="day">Mittwoch</div><div class="time">17:00–18:00</div></div><div><strong>E2-Jugend</strong><div class="place">GBH · Oppenau</div></div></div>
+<div class="session"><div><div class="day">Freitag</div><div class="time">15:45–17:00</div></div><div><strong>E2-Jugend</strong><div class="place">GBH · Oppenau</div></div></div>
+<div class="session"><div><div class="day">Dienstag</div><div class="time">18:30–20:00</div></div><div><strong>D1-Jugend</strong><div class="place">HFG · Oberkirch</div></div></div>
+<div class="session"><div><div class="day">Freitag</div><div class="time">17:00–18:30</div></div><div><strong>D1-Jugend</strong><div class="place">GBH · Oppenau</div></div></div>
+<div class="session"><div><div class="day">Mittwoch</div><div class="time">16:30–18:00</div></div><div><strong>D2-Jugend</strong><div class="place">HFG · Oberkirch</div></div></div>
+<div class="session"><div><div class="day">Freitag</div><div class="time">17:00–18:30</div></div><div><strong>D2-Jugend</strong><div class="place">GBH · Oppenau</div></div></div>
+<div class="session"><div><div class="day">Dienstag</div><div class="time">18:30–20:00</div></div><div><strong>D3-Jugend</strong><div class="place">HFG · Oberkirch</div></div></div>
+<div class="session"><div><div class="day">Mittwoch</div><div class="time">16:30–18:00</div></div><div><strong>D3-Jugend</strong><div class="place">HFG · Oberkirch</div></div></div>
+<div class="session"><div><div class="day">Dienstag</div><div class="time">18:30–20:00</div></div><div><strong>C-Jugend</strong><div class="place">GBH · Oppenau</div></div></div>
+<div class="session"><div><div class="day">Mittwoch</div><div class="time">17:30–19:00</div></div><div><strong>C-Jugend</strong><div class="place">HFG · Oberkirch</div></div></div>
+<div class="session"><div><div class="day">Mittwoch</div><div class="time">19:00–20:30</div></div><div><strong>A-Jugend</strong><div class="place">HFG · Oberkirch</div></div></div>
+<div class="session"><div><div class="day">Freitag</div><div class="time">18:30–20:00</div></div><div><strong>A-Jugend</strong><div class="place">GBH · Oppenau</div></div></div>
+</div>
+<div class="notice"><strong>Hallen:</strong> GBH = Günter-Bimmerle-Halle, Oppenau · HFG = Hans-Furler-Gymnasium, Oberkirch · FRS = Franz-Rapp-Schule, Oppenau.</div>
+</section>
+<section id="matches" class="page"><button class="back" data-page="home">← ZURÜCK ZUR STARTSEITE</button><h2 class="page-title">Spielplan</h2><div class="panel"><p>Die Spielpläne aller TuS- und HSG-Mannschaften werden als nächster Schritt ergänzt.</p></div></section>
+<section id="news" class="page"><button class="back" data-page="home">← ZURÜCK ZUR STARTSEITE</button><h2 class="page-title">Neuigkeiten</h2><div class="panel"><p>Hier erscheinen künftig Berichte, Ergebnisse und Neuigkeiten aus dem Verein.</p><p style="margin-top:13px"><a class="btn primary" href="https://www.instagram.com/tus_oppenau/" target="_blank" rel="noopener">Instagram öffnen ↗</a></p></div></section>
+<section id="sponsors" class="page"><button class="back" data-page="home">← ZURÜCK ZUR STARTSEITE</button><h2 class="page-title">Sponsoren</h2><div class="panel"><p>Die bestehende Sponsorenliste der Vereinswebsite wird im nächsten Schritt übernommen.</p></div></section>
 </main>
-<nav class="bottom" aria-label="Hauptnavigation"><button class="navbtn active" data-page="home"><span class="ico">⌂</span>Start</button><button class="navbtn" data-page="teams"><span class="ico">♟</span>Teams</button><button class="navbtn" data-page="matches"><span class="ico">▦</span>Spielplan</button><button class="navbtn" data-page="training"><span class="ico">◷</span>Training</button><button class="navbtn" data-page="news"><span class="ico">✦</span>News</button></nav>
+<nav class="bottom" aria-label="Hauptnavigation">
+<button class="navbtn active" data-page="home"><span class="ico">⌂</span>Start</button>
+<button class="navbtn" data-page="teams"><span class="ico">♟</span>Teams</button>
+<button class="navbtn" data-page="matches"><span class="ico">▦</span>Spielplan</button>
+<button class="navbtn" data-page="training"><span class="ico">◷</span>Training</button>
+<button class="navbtn" data-page="news"><span class="ico">✦</span>News</button>
+</nav>
 <script src="app.js"></script>
 </body></html>
