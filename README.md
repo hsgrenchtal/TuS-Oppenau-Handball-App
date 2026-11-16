@@ -1,14 +1,7 @@
-TuS Oppenau Handball-App – Tabellen-Fix
+TuS Oppenau App – Live-Tabellen Versuch
 
-Diese Version entfernt die nicht zuverlässig funktionierende iframe-Einbettung des BWHV-Ergebnisbereichs. Stattdessen enthält die Spielplan-Seite gut sichtbare Links zum offiziellen BWHV-Ergebnisbereich und zu Handball4all.
+Dieses Paket enthält die vollständige App. Im Bereich „Spielplan“ wird nun die offizielle BWHV-Ergebnisseite direkt eingebettet.
 
-Installation:
-1. Alle Dateien aus diesem Ordner in das Hauptverzeichnis des GitHub-Repositories hochladen.
-2. Vorhandene Dateien überschreiben.
-3. tus-hintergrund.jpg ebenfalls im Hauptverzeichnis belassen.
-4. Kurz warten, bis GitHub Pages die Änderungen veröffentlicht hat.
+Wichtig: Der BWHV bzw. Handball4all kann externe Einbettungen aus Sicherheitsgründen blockieren. Für diesen Fall bleibt ein gut sichtbarer Link zur offiziellen Seite als Ausweichlösung enthalten. Eine echte Datenintegration innerhalb der App ist nur möglich, wenn der Verband eine öffentlich nutzbare Schnittstelle bzw. Einbettung bereitstellt.
 
-Offizielle Ergebnisse/Tabellen:
-https://www.bwhv.org/spielbetrieb/ergebnisse/tabellen
-Handball4all:
-https://www.handball4all.de/
+Installation: Alle Dateien im ZIP in das Hauptverzeichnis des GitHub-Repositories hochladen und vorhandene Dateien überschreiben. tus-hintergrund.jpg muss neben index.html liegen.
