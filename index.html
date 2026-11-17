@@ -147,6 +147,59 @@ footer{text-align:center;color:#888;font-size:10px;letter-spacing:.12em;padding:
 .news-links{margin-bottom:12px}
 @media(min-width:650px){.org-branches{grid-template-columns:repeat(3,minmax(0,1fr))}.org-chart{max-width:780px;margin-left:auto;margin-right:auto}}
 
+
+/* Team-Farbzuordnung gemäß Vereinsvorgabe */
+.hsg-area .team{
+  border:1px solid rgba(226,27,35,.55);
+  border-left:4px solid #e21b23;
+  background:linear-gradient(115deg,rgba(105,8,15,.82) 0%,rgba(13,20,16,.94) 100%);
+}
+.hsg-area .team .pill{
+  color:#f3b8ba;
+  background:linear-gradient(90deg,rgba(226,27,35,.25),rgba(16,168,74,.22));
+  border-color:rgba(16,168,74,.55);
+}
+.hsg-area .team[data-training-team="Mädels"],
+.hsg-area .team[data-training-team="Bambinis Oppenau"]{
+  border-color:rgba(226,27,35,.65);
+  border-left-color:#e21b23;
+  background:linear-gradient(120deg,rgba(105,8,15,.92),rgba(24,12,14,.94));
+}
+.hsg-area .team[data-training-team="Mädels"] .pill,
+.hsg-area .team[data-training-team="Bambinis Oppenau"] .pill{
+  color:#ffc4c6;background:#e21b2333;border-color:#e21b2377;
+}
+.hsg-area .team[data-training-team="Bambinis / Minis Oberkirch"],
+.hsg-area .team[data-training-team="F-Jugend Oberkirch"]{
+  border-color:rgba(16,168,74,.7);
+  border-left-color:#10a84a;
+  background:linear-gradient(120deg,rgba(5,77,39,.92),rgba(8,22,15,.95));
+}
+.hsg-area .team[data-training-team="Bambinis / Minis Oberkirch"] .pill,
+.hsg-area .team[data-training-team="F-Jugend Oberkirch"] .pill{
+  color:#b7efca;background:#087d3233;border-color:#13a84c77;
+}
+.hsg-area .team[data-training-team="E1/3-Jugend"],
+.hsg-area .team[data-training-team="E2-Jugend"],
+.hsg-area .team[data-training-team="D1-Jugend"],
+.hsg-area .team[data-training-team="D2-Jugend"],
+.hsg-area .team[data-training-team="D3-Jugend"],
+.hsg-area .team[data-training-team="C-Jugend"],
+.hsg-area .team[data-training-team="A-Jugend"]{
+  border-color:rgba(16,168,74,.58);
+  border-left:4px solid #e21b23;
+  background:linear-gradient(115deg,rgba(105,8,15,.78) 0%,rgba(5,77,39,.70) 100%);
+}
+.hsg-area .team[data-training-team="E1/3-Jugend"] .pill,
+.hsg-area .team[data-training-team="E2-Jugend"] .pill,
+.hsg-area .team[data-training-team="D1-Jugend"] .pill,
+.hsg-area .team[data-training-team="D2-Jugend"] .pill,
+.hsg-area .team[data-training-team="D3-Jugend"] .pill,
+.hsg-area .team[data-training-team="C-Jugend"] .pill,
+.hsg-area .team[data-training-team="A-Jugend"] .pill{
+  color:#f1d7d8;background:linear-gradient(90deg,#e21b2333,#087d3233);border-color:#13a84c77;
+}
+
 </style>
 </head>
 <body>
