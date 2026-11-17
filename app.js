@@ -65,7 +65,7 @@
       const venue = [match.hall, match.street, `${match.postal} ${match.city}`].filter(Boolean).join(' · ');
       const status = past ? 'Vergangener Spieltag' : (match.isHome ? 'HEIMSPIEL' : 'AUSWÄRTSSPIEL');
       const eventNote = match.event ? ' · ' + esc(match.event) : '';
-      return `<article class="match-card">
+      return `<article class="match-card ${match.club === 'HSG Renchtal' ? 'hsg-match' : 'tus-match'}">
         <div class="match-card-top">
           <span class="match-date">${esc(fmtDate(match.date))} · ${esc(match.time)} Uhr</span>
           <span class="match-team-tag">${esc(match.team)}</span>
@@ -99,4 +99,35 @@
     render();
   });
   render();
+})();
+
+
+(() => {
+  const target = document.getElementById('homeNextMatches');
+  const matches = Array.isArray(window.TUS_MATCHES) ? window.TUS_MATCHES : [];
+  if (!target) return;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const upcoming = matches.filter(match => {
+    if (!match.date) return false;
+    const [y,m,d] = match.date.split('-').map(Number);
+    const date = new Date(y,m-1,d); date.setHours(0,0,0,0);
+    return date >= today;
+  }).sort((a,b) => (a.date+a.time).localeCompare(b.date+b.time)).slice(0,3);
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const maps = match => 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(match.address || [match.hall,match.city,'Deutschland'].filter(Boolean).join(', '));
+  if (!upcoming.length) { target.innerHTML = '<div class="home-next-empty">Aktuell sind keine kommenden Spiele im hinterlegten Spielplan eingetragen.</div>'; return; }
+  target.innerHTML = upcoming.map(match => {
+    const [y,m,d] = match.date.split('-').map(Number);
+    const date = new Date(y,m-1,d);
+    const day = date.toLocaleDateString('de-DE',{day:'2-digit'});
+    const month = date.toLocaleDateString('de-DE',{month:'short'}).replace('.','');
+    const venue = [match.hall,match.city].filter(Boolean).join(' · ');
+    const status = match.isHome ? 'HEIMSPIEL' : 'AUSWÄRTSSPIEL';
+    const opponent = match.isHome ? match.away : match.home;
+    return `<article class="home-match ${match.club === 'HSG Renchtal' ? 'hsg-match' : 'tus-match'}">
+      <div class="home-match-date"><b>${esc(day)}</b><small>${esc(month)}</small></div>
+      <div class="home-match-info"><strong>${esc(match.team)} · ${esc(match.club)}</strong><small>${esc(status)} · ${esc(match.time)} Uhr<br>${esc(match.home)} – ${esc(match.away)}<br>📍 ${esc(venue)}</small>
+      <div class="home-match-actions"><a class="btn primary" href="${maps(match)}" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></div></div>
+    </article>`;
+  }).join('');
 })();

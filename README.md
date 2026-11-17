@@ -6,8 +6,16 @@
 - `spielplan.js` – aus den hochgeladenen BWHV-CSV-Spielplanexporten übernommene Termine
 - `manifest.webmanifest` – App-Manifest
 - `tus-hintergrund.jpg` – Vereins-Hintergrundbild
+- `tus-oppenau-logo.png` – ausschließlich das TuS-Oppenau-Wappen für den roten Vereinsbereich
+- `hsg-renchtal-logo.png` – das von dir gelieferte kombinierte Logo, ausschließlich für den grünen HSG-Renchtal-Bereich
 
 ## Neue Funktionen
+- Deutlich getrennte Vereinsidentitäten: TuS Oppenau in Rot/Weiß, HSG Renchtal in Rot/Grün
+- TuS-Oppenau-Wappen separat im Kopfbereich und bei den Herren
+- HSG-Renchtal-Logo nur im Jugendbereich, bei HSG-Trainingszeiten und HSG-Spielplänen
+- farblich getrennte Spielkarten: TuS rot, HSG grün
+- Startseite im stärkeren TuS-Auftritt mit Rot-Weiß-Schwarz, markanter Vereinskopfzeile und Vereinsakzenten
+- prominenter Bereich „Nächste Spiele“ mit den drei zeitlich nächsten Begegnungen aus dem Spielplan inklusive Gegner, Uhrzeit, Heim/Auswärts, Halle und Google-Maps-Route
 - Spieltage getrennt nach TuS Oppenau und HSG Renchtal
 - Filter nach Herren 1, Herren 2, A-, C-, D1-, D2-, D3-, E1-, E2- und E3-Jugend
 - zusätzlicher Bereich für den D-Jugend-Sichtungsspielplan
