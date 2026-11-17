@@ -200,6 +200,97 @@ footer{text-align:center;color:#888;font-size:10px;letter-spacing:.12em;padding:
   color:#f1d7d8;background:linear-gradient(90deg,#e21b2333,#087d3233);border-color:#13a84c77;
 }
 
+
+/* HSG Renchtal: Vereinsidentität konsequent in Rot-Grün */
+.club-identity.hsg{
+  background:linear-gradient(115deg,#a90d15 0%,#69080d 43%,#07552a 57%,#087d32 100%);
+  border:2px solid transparent;
+  background-clip:padding-box;
+  box-shadow:0 0 0 1px #20c45b,0 10px 24px #0008;
+}
+.hsg-brandbar{
+  border:1px solid #18b85a;
+  border-left:4px solid #e21b23;
+  background:linear-gradient(105deg,#8f1018 0%,#4b0b10 42%,#064522 58%,#087d32 100%);
+  box-shadow:inset 0 0 22px #0005,0 10px 26px #0006;
+}
+.hsg-brandbar small{color:#e2f7e8}
+.hsg-area .team,.hsg-area .session{
+  border:1px solid #16a34a88;
+  border-left:4px solid #e21b23;
+  background:linear-gradient(110deg,#5f0b12eF 0%,#241014f2 47%,#082b19f2 100%);
+}
+.hsg-area .team .pill,.hsg-area .pill{
+  color:#e8f8ed;
+  background:linear-gradient(100deg,#a90d154d,#087d324d);
+  border-color:#18a95799;
+}
+.hsg-area .team[data-training-team="Mädels"],
+.hsg-area .team[data-training-team="Bambinis Oppenau"]{
+  border-color:#e21b2388;border-left-color:#e21b23;
+  background:linear-gradient(110deg,#8e1018ed,#350b10f2);
+}
+.hsg-area .team[data-training-team="Mädels"] .pill,
+.hsg-area .team[data-training-team="Bambinis Oppenau"] .pill{
+  color:#ffe5e6;background:#a90d1555;border-color:#f0444c;
+}
+.hsg-area .team[data-training-team="Bambinis / Minis Oberkirch"],
+.hsg-area .team[data-training-team="F-Jugend Oberkirch"]{
+  border-color:#18b85a99;border-left-color:#10a84a;
+  background:linear-gradient(110deg,#07552bed,#062719f2);
+}
+.hsg-area .team[data-training-team="Bambinis / Minis Oberkirch"] .pill,
+.hsg-area .team[data-training-team="F-Jugend Oberkirch"] .pill{
+  color:#d8ffe4;background:#087d3255;border-color:#18c45a;
+}
+
+
+/* Finale Teamkarten-Farben: unabhängig von umgebenden Layout-Klassen */
+#teams .team[data-training-team="Herren 1"],
+#teams .team[data-training-team="Herren 2"],
+#teams .team[data-training-team="Mädels"],
+#teams .team[data-training-team="Bambinis Oppenau"]{
+  background:linear-gradient(115deg,rgba(174,12,24,.96),rgba(70,8,13,.96)) !important;
+  border:1px solid #ef3540 !important;
+  border-left:5px solid #f0202c !important;
+}
+#teams .team[data-training-team="Herren 1"] .pill,
+#teams .team[data-training-team="Herren 2"] .pill,
+#teams .team[data-training-team="Mädels"] .pill,
+#teams .team[data-training-team="Bambinis Oppenau"] .pill{
+  color:#fff !important;background:rgba(220,20,35,.30) !important;border-color:#f0444c !important;
+}
+#teams .team[data-training-team="Bambinis / Minis Oberkirch"],
+#teams .team[data-training-team="F-Jugend Oberkirch"]{
+  background:linear-gradient(115deg,rgba(5,111,49,.96),rgba(3,48,27,.96)) !important;
+  border:1px solid #16bd5a !important;
+  border-left:5px solid #16c45a !important;
+}
+#teams .team[data-training-team="Bambinis / Minis Oberkirch"] .pill,
+#teams .team[data-training-team="F-Jugend Oberkirch"] .pill{
+  color:#e7ffed !important;background:rgba(16,168,74,.30) !important;border-color:#16c45a !important;
+}
+#teams .team[data-training-team="E1/3-Jugend"],
+#teams .team[data-training-team="E2-Jugend"],
+#teams .team[data-training-team="D1-Jugend"],
+#teams .team[data-training-team="D2-Jugend"],
+#teams .team[data-training-team="D3-Jugend"],
+#teams .team[data-training-team="C-Jugend"],
+#teams .team[data-training-team="A-Jugend"]{
+  background:linear-gradient(110deg,rgba(139,12,22,.94) 0%,rgba(70,10,17,.94) 48%,rgba(5,91,43,.96) 100%) !important;
+  border:1px solid #19a954 !important;
+  border-left:5px solid #e21b23 !important;
+}
+#teams .team[data-training-team="E1/3-Jugend"] .pill,
+#teams .team[data-training-team="E2-Jugend"] .pill,
+#teams .team[data-training-team="D1-Jugend"] .pill,
+#teams .team[data-training-team="D2-Jugend"] .pill,
+#teams .team[data-training-team="D3-Jugend"] .pill,
+#teams .team[data-training-team="C-Jugend"] .pill,
+#teams .team[data-training-team="A-Jugend"] .pill{
+  color:#fff !important;background:linear-gradient(90deg,rgba(226,27,35,.32),rgba(16,168,74,.32)) !important;border-color:#19a954 !important;
+}
+
 </style>
 </head>
 <body>
