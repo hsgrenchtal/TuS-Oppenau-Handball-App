@@ -1,10 +1,31 @@
-TuS Oppenau App – Trainingszeiten und Spielplan-Übersicht
+# TuS Oppenau / HSG Renchtal – App-Update Spielplan & Google Maps
 
-Änderungen in dieser Version:
-- Trainingszeiten Herren 1 ergänzt: Dienstag 20:00–21:30 Uhr und Freitag 20:00–21:30 Uhr, jeweils GBH Oppenau.
-- Trainingszeit Herren 2 ergänzt: Mittwoch 20:00–21:30 Uhr, GBH Oppenau.
-- Trainingszeiten sind optisch in Jugend und Herren getrennt.
-- Spielplanbereich ist in Herren 1, Herren 2 und Jugend / HSG Renchtal getrennt.
-- Die offizielle BWHV-/Handball4all-Übersicht bleibt als gemeinsame Verbandsübersicht erhalten.
+## Inhalt
+- `index.html` – App-Oberfläche mit getrennten Spielplanfiltern
+- `app.js` – Navigation und Darstellung der Spieltermine
+- `spielplan.js` – aus den hochgeladenen BWHV-CSV-Spielplanexporten übernommene Termine
+- `manifest.webmanifest` – App-Manifest
+- `tus-hintergrund.jpg` – Vereins-Hintergrundbild
 
-Installation: Alle Dateien aus diesem Ordner in das Hauptverzeichnis des GitHub-Repositories hochladen und vorhandene Dateien überschreiben. tus-hintergrund.jpg muss neben index.html liegen.
+## Neue Funktionen
+- Spieltage getrennt nach TuS Oppenau und HSG Renchtal
+- Filter nach Herren 1, Herren 2, A-, C-, D1-, D2-, D3-, E1-, E2- und E3-Jugend
+- zusätzlicher Bereich für den D-Jugend-Sichtungsspielplan
+- Datum, Anwurfzeit, Heim-/Auswärtsteam und Hallenadresse
+- `Google Maps · Route` öffnet die Navigation zum konkreten Hallenstandort
+- pro Mannschaft direkter Link zur passenden BWHV-Seite (soweit eine Mannschafts-ID vorliegt)
+- bisherige Trainingszeiten, einschließlich Herren 1 und Herren 2, bleiben enthalten
+- offizielle BWHV-Tabelleneinbindung bleibt erhalten
+
+## Datenstand und wichtige Hinweise
+Die Spieltermine wurden aus den CSV-Dateien übernommen, die im Chat bereitgestellt wurden. Enthalten sind 133 Spiel-/Turniereinträge vom 19.09.2026 bis 25.04.2027. Die Exportdateien enthalten Spieltermine und Hallenadressen, aber keine verlässlichen Endergebnisse; daher werden keine Spielstände erfunden oder angezeigt.
+
+Die Spieltermine in `spielplan.js` sind ein Datenstand des hochgeladenen Exports und aktualisieren sich nicht selbstständig. Bei Spielverlegungen bitte den BWHV-Link der jeweiligen Mannschaft öffnen. Die Google-Maps-Links verwenden die im Export hinterlegte Hallenadresse.
+
+## Installation auf GitHub Pages
+1. ZIP-Datei entpacken.
+2. Alle sechs Dateien aus dem Ordner in das Hauptverzeichnis des GitHub-Repositories `TuS-Oppenau-Handball-App` hochladen.
+3. Vorhandene Dateien überschreiben.
+4. Kurz warten und die App neu laden. Falls noch die alte Version erscheint, Browser/App vollständig schließen und erneut öffnen.
+
+Wichtig: `tus-hintergrund.jpg` muss zusammen mit `index.html` im Hauptverzeichnis liegen. `spielplan.js` darf nicht fehlen.

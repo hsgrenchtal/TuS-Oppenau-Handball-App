@@ -28,6 +28,26 @@ nav.bottom{position:fixed;z-index:20;bottom:0;left:0;right:0;display:grid;grid-t
 .navbtn{border:0;background:transparent;color:#a5a5aa;border-radius:13px;padding:8px 2px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;font-weight:800;cursor:pointer}.navbtn .ico{font-size:19px}.navbtn.active{background:#e21b232e;color:white}.navbtn.active .ico{color:#ff6268}
 footer{text-align:center;color:#888;font-size:10px;letter-spacing:.12em;padding:24px 5px}
 @media(min-width:650px){main{padding:25px 24px 40px}.hero{min-height:420px;padding:34px}.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.team-list{grid-template-columns:repeat(2,minmax(0,1fr))}nav.bottom{left:50%;right:auto;transform:translateX(-50%);width:min(620px,100%);border-radius:18px 18px 0 0;border:1px solid var(--line);border-bottom:0}}
+
+.match-toolbar{display:grid;gap:10px;margin:14px 0}
+.club-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.club-tab{border:1px solid var(--line);border-radius:11px;padding:10px 6px;background:#ffffff10;color:#ddd;font-size:11px;font-weight:900;cursor:pointer}
+.club-tab.active{background:var(--red);border-color:var(--red);color:#fff}
+.match-select{width:100%;border:1px solid var(--line);border-radius:12px;background:#171719;color:#fff;padding:13px;font-size:13px}
+.match-toggle{border:1px solid var(--line);border-radius:99px;padding:10px 13px;background:#ffffff10;color:#fff;font-weight:800;font-size:11px;cursor:pointer}
+.match-count{color:var(--muted);font-size:11px;margin:0 2px}
+.match-list{display:grid;gap:10px;margin-top:12px}
+.match-card{border:1px solid var(--line);border-radius:15px;background:var(--card);padding:14px}
+.match-card-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.match-date{font-size:11px;color:#ff777b;font-weight:900;letter-spacing:.04em}
+.match-team-tag{font-size:10px;color:#ddd;background:#ffffff12;border:1px solid var(--line);border-radius:99px;padding:5px 8px}
+.match-pairing{font-size:14px;font-weight:900;line-height:1.4}
+.match-meta{font-size:11px;color:#c2c2c6;line-height:1.6;margin-top:7px}
+.match-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.match-actions a{font-size:11px;padding:9px 12px}
+.match-status{font-size:10px;font-weight:800;color:#c8c8ca}
+.match-empty{border:1px dashed var(--line);border-radius:14px;padding:18px;color:#bbb;font-size:12px;text-align:center}
+
 </style>
 </head>
 <body>
@@ -108,6 +128,36 @@ footer{text-align:center;color:#888;font-size:10px;letter-spacing:.12em;padding:
 <h2 class="page-title">Spielplan & Ergebnisse</h2>
 <div class="panel"><p>Offizieller Ergebnisbereich des Baden-Württembergischen Handball-Verbands. Hier kannst du die Wettbewerbe auswählen und Spielpläne, Ergebnisse und Tabellen aufrufen.</p></div>
 
+
+<div class="section-head"><h2>Spieltermine</h2><span>SAISON 2026/27</span></div>
+<div class="match-toolbar">
+  <div class="club-tabs" role="group" aria-label="Verein auswählen">
+    <button class="club-tab active" type="button" data-club-filter="all">Alle</button>
+    <button class="club-tab" type="button" data-club-filter="TuS Oppenau">TuS Herren</button>
+    <button class="club-tab" type="button" data-club-filter="HSG Renchtal">HSG Jugend</button>
+  </div>
+  <select id="matchTeamFilter" class="match-select" aria-label="Mannschaft auswählen">
+    <option value="all">Alle Mannschaften</option>
+    <option value="Herren 1">TuS Oppenau · Herren 1</option>
+    <option value="Herren 2">TuS Oppenau · Herren 2</option>
+    <option value="A-Jugend">HSG Renchtal · A-Jugend</option>
+    <option value="C-Jugend">HSG Renchtal · C-Jugend</option>
+    <option value="D1-Jugend">HSG Renchtal · D1</option>
+    <option value="D2-Jugend">HSG Renchtal · D2</option>
+    <option value="D3-Jugend">HSG Renchtal · D3</option>
+    <option value="E1-Jugend">HSG Renchtal · E1</option>
+    <option value="E2-Jugend">HSG Renchtal · E2</option>
+    <option value="E3-Jugend">HSG Renchtal · E3</option>
+    <option value="D-Jugend-Sichtung">HSG Renchtal · D-Jugend-Sichtung</option>
+  </select>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+    <p id="matchCount" class="match-count">Spieltermine werden geladen …</p>
+    <button id="matchPastToggle" class="match-toggle" type="button">Alle Termine anzeigen</button>
+  </div>
+</div>
+<div id="matchList" class="match-list" aria-live="polite"></div>
+<div class="notice">Die Termine und Hallenadressen stammen aus den von dir hochgeladenen BWHV-Spielplanexporten. Die Navigation öffnet Google Maps mit dem jeweiligen Spielort. Bei Spielverlegungen bitte den aktuellen BWHV-Stand beachten.</div>
+
 <div class="section-head"><h2>Herren 1</h2><span>TUS OPPENAU</span></div>
 <div class="team-list">
 <div class="team"><div class="team-top"><div><strong>Herren 1 · Spielplan & Tabelle</strong><small>Erste Herrenmannschaft · Saison 2026/27</small></div><span class="pill">Herren 1</span></div><div class="actions"><a class="btn" href="https://www.handballoppenau.de/Aktive/1-Mannschaft/" target="_blank" rel="noopener">Mannschaftsseite ↗</a><a class="btn" href="https://www.handball4all.de/home/portal/baden-wuerttembergischer-hv" target="_blank" rel="noopener">Verbandsdaten ↗</a></div></div>
@@ -148,5 +198,6 @@ footer{text-align:center;color:#888;font-size:10px;letter-spacing:.12em;padding:
 <button class="navbtn" data-page="training"><span class="ico">◷</span>Training</button>
 <button class="navbtn" data-page="news"><span class="ico">✦</span>News</button>
 </nav>
+<script src="spielplan.js"></script>
 <script src="app.js"></script>
 </body></html>
