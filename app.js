@@ -7,6 +7,7 @@
     navButtons.forEach(button => button.classList.toggle('active', button.dataset.page === name));
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
+  window.TUS_SHOW_PAGE = showPage;
   document.addEventListener('click', event => {
     const button = event.target.closest('[data-page]');
     if (!button) return;
@@ -131,3 +132,69 @@
     </article>`;
   }).join('');
 })();
+
+
+// Team cards open the matching training schedule directly.
+(() => {
+  const rows = [...document.querySelectorAll('[data-training-session]')];
+  const panel = document.getElementById('trainingSelection');
+  const title = document.getElementById('trainingSelectionName');
+  if (!rows.length || !panel || !title) return;
+  const showTeam = team => {
+    window.TUS_SHOW_PAGE?.('training');
+    rows.forEach(row => {
+      const match = row.dataset.trainingSession === team;
+      row.hidden = !match;
+      row.classList.toggle('training-highlight', match);
+    });
+    title.textContent = team;
+    panel.hidden = false;
+    requestAnimationFrame(() => panel.scrollIntoView({behavior:'smooth',block:'start'}));
+  };
+  const showAll = () => {
+    rows.forEach(row => { row.hidden = false; row.classList.remove('training-highlight'); });
+    panel.hidden = true;
+  };
+  document.addEventListener('click', event => {
+    const card = event.target.closest('[data-training-team]');
+    if (card && !event.target.closest('a,button')) { showTeam(card.dataset.trainingTeam); return; }
+    if (event.target.closest('[data-show-all-training]')) showAll();
+  });
+  document.addEventListener('keydown', event => {
+    const card = event.target.closest('[data-training-team]');
+    if (card && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault(); showTeam(card.dataset.trainingTeam);
+    }
+  });
+})();
+
+// Rotating sponsor spotlight on the home page.
+(() => {const spot=document.getElementById('sponsorSpotlight'),logo=document.getElementById('sponsorSpotlightLogo'),name=document.getElementById('sponsorSpotlightName');if(!spot||!logo||!name)return;const sponsors=[
+    {name:"J.P. Chenet", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/AP-A5-JPC-gamme-DE-sport-HD-.jpg/downsize_1280_0/AP-A5-JPC-gamme-DE-sport-HD-.jpg", url:"https://www.jpchenet.com/"},
+    {name:"Roth – Die Autohäuser", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Roth.jpg/downsize_1280_0/300-Roth.jpg", url:"https://roth-autohaus.de/"},
+    {name:"Lörch Obstbrände", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-loerch.jpg/downsize_1280_0/300-loerch.jpg", url:"https://www.handballoppenau.de/Verein/Sponsoren/"},
+    {name:"Rothaus", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Rothhaus.jpg/downsize_1280_0/300-Rothhaus.jpg", url:"https://www.rothaus.de/"},
+    {name:"Getränke Roth", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Getraenke-Roth.jpg/downsize_1280_0/300-Getraenke-Roth.jpg", url:"https://www.getraenkeroth.com/"},
+    {name:"Sortimo", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Sortimo.jpg/downsize_1280_0/300-Sortimo.jpg", url:"https://www.sortimo.com/"},
+    {name:"Hotel Rebstock Oppenau", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Rebstock.jpg/downsize_1280_0/300-Rebstock.jpg", url:"https://www.handballoppenau.de/Verein/Sponsoren/"},
+    {name:"Peterstaler", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Peterstaler.jpg/downsize_1280_0/300-Peterstaler.jpg", url:"https://www.peterstaler.de/"},
+    {name:"Sparkasse Offenburg/Ortenau", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Sparkasse.jpg/downsize_1280_0/300-Sparkasse.jpg", url:"https://www.sparkasse-offenburg.de/"},
+    {name:"Franz H. Bruder", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Burder.jpg/downsize_1280_0/300-Burder.jpg", url:"https://www.bruder-gmbh.de/"},
+    {name:"Erdrich Metallbearbeitung", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Erdrich.jpg/downsize_1280_0/300-Erdrich.jpg", url:"https://www.erdrichgmbh.de/"},
+    {name:"DOLL", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/doll_300.jpg/downsize_1280_0/doll_300.jpg", url:"https://www.doll.eu/"},
+    {name:"MULAG", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Mulag.jpg/downsize_1280_0/300-Mulag.jpg", url:"https://www.mulag.de/"},
+    {name:"Walz Design", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Walz.jpg/downsize_1280_0/300-Walz.jpg", url:"https://www.handballoppenau.de/Verein/Sponsoren/"},
+    {name:"Hodapp Orthopädie · Schuhe · Sport", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/Schuh_hodapp_300.jpg/downsize_1280_0/Schuh_hodapp_300.jpg", url:"https://www.handballoppenau.de/Verein/Sponsoren/"},
+    {name:"etol", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-etol.jpg/downsize_1280_0/300-etol.jpg", url:"https://www.etol.de/"},
+    {name:"Huber Oppenauer Reifendienst", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Reifenhuber.jpg/downsize_1280_0/300-Reifenhuber.jpg", url:"https://www.reifenhuber-oppenau.de/"},
+    {name:"Synergy – Michael Metz", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/Synergy120110.jpg/downsize_1280_0/Synergy120110.jpg", url:"https://www.praxis-synergy.de/"},
+    {name:"FBS Franz Birk Schlosserei", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-FBS.jpg/downsize_1280_0/300-FBS.jpg", url:"https://www.fbs-oppenau.de/"},
+    {name:"Forstbetrieb Helmut Huber", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-helmuthuber.jpg/downsize_1280_0/300-helmuthuber.jpg", url:"https://www.huberoppenau.de/"},
+    {name:"Modehaus Kimmig", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Kimmig.jpg/downsize_1280_0/300-Kimmig.jpg", url:"https://www.modehaus-kimmig.de/"},
+    {name:"Volksbank Offenburg", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/Volksbank_300.jpg/downsize_1280_0/Volksbank_300.jpg", url:"https://www.volksbank-offenburg.de/"},
+    {name:"Schlüsselservice Kehl – Jankowski", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/jankowski_home.jpg/downsize_1280_0/jankowski_home.jpg", url:"https://www.handballoppenau.de/Verein/Sponsoren/"},
+    {name:"Schmiederer", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Schmiederer.jpg/downsize_1280_0/300-Schmiederer.jpg", url:"https://www.schmiederer-bau-oppenau.de/"},
+    {name:"Streck Elektro", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/StreckElektro300.jpg/downsize_1280_0/StreckElektro300.jpg", url:"https://www.handballoppenau.de/Verein/Sponsoren/"},
+    {name:"Metzgerei Braun", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/300-Metzgerei-Braun.jpg/downsize_1280_0/300-Metzgerei-Braun.jpg", url:"https://www.metzgerei-braun-oppenau.de/"},
+    {name:"LBS", image:"https://www.handballoppenau.de/.cm4all/iproc.php/Sponsoren/LBS_werbung300.jpg/downsize_1280_0/LBS_werbung300.jpg", url:"https://www.lbs.de/"}
+];let i=0;const show=()=>{const s=sponsors[i];name.textContent=s.name;logo.src=s.image;logo.alt='Logo '+s.name;spot.href=s.url;spot.setAttribute('aria-label',s.name+' – Website öffnen');};show();window.setInterval(()=>{i=(i+1)%sponsors.length;show();},5000);})();
