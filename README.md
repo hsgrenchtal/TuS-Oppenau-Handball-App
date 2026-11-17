@@ -46,3 +46,7 @@ Die HSG-Ansprechpartner Marius Huber und Thomas Hirt wurden als HSG-Leitung übe
 2. Alle Dateien im Ordner in das Hauptverzeichnis des GitHub-Repositories `TuS-Oppenau-Handball-App` hochladen.
 3. Vorhandene Dateien überschreiben.
 4. App neu laden.
+
+
+## Aktualisierung Hintergrund und Vereinsfarben
+Das Hintergrundbild wurde durch die bereitgestellte hochformatige TuS-Grafik ersetzt. Die starke schwarze Überblendung wurde reduziert, damit Rot, Weiß und das Vereinsmotiv sichtbar bleiben. TuS-Bereiche bleiben rot/weiß, HSG-Bereiche rot/grün. Der Organigramm-/Ansprechpartner-Bereich ist bis zur bestätigten offiziellen Vereinsstruktur nicht enthalten.
