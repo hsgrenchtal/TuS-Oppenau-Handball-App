@@ -245,50 +245,46 @@ footer{text-align:center;color:#888;font-size:10px;letter-spacing:.12em;padding:
 }
 
 
-/* Finale Teamkarten-Farben: unabhängig von umgebenden Layout-Klassen */
-#teams .team[data-training-team="Herren 1"],
-#teams .team[data-training-team="Herren 2"],
-#teams .team[data-training-team="Mädels"],
-#teams .team[data-training-team="Bambinis Oppenau"]{
-  background:linear-gradient(115deg,rgba(174,12,24,.96),rgba(70,8,13,.96)) !important;
-  border:1px solid #ef3540 !important;
+/* Verbindliche Teamfarben laut Vereinsvorgabe */
+#teams .hsg-area .team[data-training-team="Mädels"],
+#teams .hsg-area .team[data-training-team="Bambinis Oppenau"]{
+  background:linear-gradient(115deg,#a90d18 0%,#650b12 100%) !important;
+  border:1px solid #ed303a !important;
   border-left:5px solid #f0202c !important;
 }
-#teams .team[data-training-team="Herren 1"] .pill,
-#teams .team[data-training-team="Herren 2"] .pill,
-#teams .team[data-training-team="Mädels"] .pill,
-#teams .team[data-training-team="Bambinis Oppenau"] .pill{
-  color:#fff !important;background:rgba(220,20,35,.30) !important;border-color:#f0444c !important;
+#teams .hsg-area .team[data-training-team="Mädels"] .pill,
+#teams .hsg-area .team[data-training-team="Bambinis Oppenau"] .pill{
+  color:#fff !important;background:#b51b2855 !important;border-color:#f0444c !important;
 }
-#teams .team[data-training-team="Bambinis / Minis Oberkirch"],
-#teams .team[data-training-team="F-Jugend Oberkirch"]{
-  background:linear-gradient(115deg,rgba(5,111,49,.96),rgba(3,48,27,.96)) !important;
+#teams .hsg-area .team[data-training-team="Bambinis / Minis Oberkirch"],
+#teams .hsg-area .team[data-training-team="F-Jugend Oberkirch"]{
+  background:linear-gradient(115deg,#087d36 0%,#064321 100%) !important;
   border:1px solid #16bd5a !important;
   border-left:5px solid #16c45a !important;
 }
-#teams .team[data-training-team="Bambinis / Minis Oberkirch"] .pill,
-#teams .team[data-training-team="F-Jugend Oberkirch"] .pill{
-  color:#e7ffed !important;background:rgba(16,168,74,.30) !important;border-color:#16c45a !important;
+#teams .hsg-area .team[data-training-team="Bambinis / Minis Oberkirch"] .pill,
+#teams .hsg-area .team[data-training-team="F-Jugend Oberkirch"] .pill{
+  color:#e7ffed !important;background:#10a84a55 !important;border-color:#16c45a !important;
 }
-#teams .team[data-training-team="E1/3-Jugend"],
-#teams .team[data-training-team="E2-Jugend"],
-#teams .team[data-training-team="D1-Jugend"],
-#teams .team[data-training-team="D2-Jugend"],
-#teams .team[data-training-team="D3-Jugend"],
-#teams .team[data-training-team="C-Jugend"],
-#teams .team[data-training-team="A-Jugend"]{
-  background:linear-gradient(110deg,rgba(139,12,22,.94) 0%,rgba(70,10,17,.94) 48%,rgba(5,91,43,.96) 100%) !important;
-  border:1px solid #19a954 !important;
+#teams .hsg-area .team[data-training-team="E1/3-Jugend"],
+#teams .hsg-area .team[data-training-team="E2-Jugend"],
+#teams .hsg-area .team[data-training-team="D1-Jugend"],
+#teams .hsg-area .team[data-training-team="D2-Jugend"],
+#teams .hsg-area .team[data-training-team="D3-Jugend"],
+#teams .hsg-area .team[data-training-team="C-Jugend"],
+#teams .hsg-area .team[data-training-team="A-Jugend"]{
+  background:linear-gradient(110deg,#a90d18 0%,#650b12 47%,#07552a 53%,#087d36 100%) !important;
+  border:1px solid #19b65a !important;
   border-left:5px solid #e21b23 !important;
 }
-#teams .team[data-training-team="E1/3-Jugend"] .pill,
-#teams .team[data-training-team="E2-Jugend"] .pill,
-#teams .team[data-training-team="D1-Jugend"] .pill,
-#teams .team[data-training-team="D2-Jugend"] .pill,
-#teams .team[data-training-team="D3-Jugend"] .pill,
-#teams .team[data-training-team="C-Jugend"] .pill,
-#teams .team[data-training-team="A-Jugend"] .pill{
-  color:#fff !important;background:linear-gradient(90deg,rgba(226,27,35,.32),rgba(16,168,74,.32)) !important;border-color:#19a954 !important;
+#teams .hsg-area .team[data-training-team="E1/3-Jugend"] .pill,
+#teams .hsg-area .team[data-training-team="E2-Jugend"] .pill,
+#teams .hsg-area .team[data-training-team="D1-Jugend"] .pill,
+#teams .hsg-area .team[data-training-team="D2-Jugend"] .pill,
+#teams .hsg-area .team[data-training-team="D3-Jugend"] .pill,
+#teams .hsg-area .team[data-training-team="C-Jugend"] .pill,
+#teams .hsg-area .team[data-training-team="A-Jugend"] .pill{
+  color:#fff !important;background:linear-gradient(90deg,#a90d1855,#087d3655) !important;border-color:#19b65a !important;
 }
 
 </style>
@@ -341,8 +337,8 @@ footer{text-align:center;color:#888;font-size:10px;letter-spacing:.12em;padding:
 <div class="tus-brandbar"><img src="tus-oppenau-logo.png" alt="TuS Oppenau Logo"><div><strong>TuS Oppenau</strong><small>Aktive · Herrenhandball</small></div></div>
 <div class="section-head"><h2>Herrenmannschaften</h2><span>AKTIVE</span></div>
 <div class="team-list">
-<div class="team team-link" role="button" tabindex="0" aria-label="Trainingszeiten für Herren 1 anzeigen" data-training-team="Herren 1"><div class="team-top"><div><strong>Herren 1</strong><small>1. Herrenmannschaft des TuS Oppenau</small></div><span class="pill">Herren 1</span></div><div class="actions"><a class="btn" href="https://www.handball4all.de/" target="_blank" rel="noopener">Spielbetrieb öffnen ↗</a></div></div>
-<div class="team team-link" role="button" tabindex="0" aria-label="Trainingszeiten für Herren 2 anzeigen" data-training-team="Herren 2"><div class="team-top"><div><strong>Herren 2</strong><small>2. Herrenmannschaft des TuS Oppenau</small></div><span class="pill">Herren 2</span></div><div class="actions"><a class="btn" href="https://www.handball4all.de/" target="_blank" rel="noopener">Spielbetrieb öffnen ↗</a></div></div>
+<div class="team team-link" role="button" tabindex="0" aria-label="Trainingszeiten für Herren 1 anzeigen" data-training-team="Herren 1"><div class="team-top"><div><strong>Herren 1</strong><small>1. Herrenmannschaft des TuS Oppenau</small></div><span class="pill">Herren 1</span></div></div>
+<div class="team team-link" role="button" tabindex="0" aria-label="Trainingszeiten für Herren 2 anzeigen" data-training-team="Herren 2"><div class="team-top"><div><strong>Herren 2</strong><small>2. Herrenmannschaft des TuS Oppenau</small></div><span class="pill">Herren 2</span></div></div>
 </div>
 <div class="notice">Es gibt zwei Herrenmannschaften: Herren 1 und Herren 2. Eine dritte Herrenmannschaft ist nicht aufgeführt.</div>
 <div class="notice">E-Jugend und jünger in Oberkirch nur mit Anmeldung. Kontakt: <a href="mailto:jugend@handball-oberkirch.de" style="color:#fff">jugend@handball-oberkirch.de</a></div>
@@ -431,7 +427,7 @@ footer{text-align:center;color:#888;font-size:10px;letter-spacing:.12em;padding:
 <div class="hsg-brandbar"><img src="hsg-renchtal-logo.png" alt="HSG Renchtal Logo"><div><strong>HSG Renchtal</strong><small>Jugend-Spielpläne & Tabellen</small></div></div>
 <div class="section-head"><h2>Jugend · HSG Renchtal</h2><span>JUGENDTEAMS</span></div>
 <div class="team-list">
-<div class="team"><div class="team-top"><div><strong>Jugend-Spielpläne & Tabellen</strong><small>Alle Jugendmannschaften der HSG Renchtal</small></div><span class="pill">Jugend</span></div><div class="actions"><a class="btn" href="https://www.handball4all.de/home/portal/baden-wuerttembergischer-hv" target="_blank" rel="noopener">Jugend-Spielbetrieb öffnen ↗</a></div></div>
+<div class="team"><div class="team-top"><div><strong>Jugend-Spielpläne & Tabellen</strong><small>Alle Jugendmannschaften der HSG Renchtal</small></div><span class="pill">Jugend</span></div></div>
 </div>
 
 <div class="section-head"><h2>Offizielle Tabellenübersicht</h2><span>BWHV / HANDBALL4ALL</span></div>

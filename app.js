@@ -113,7 +113,7 @@
     const [y,m,d] = match.date.split('-').map(Number);
     const date = new Date(y,m-1,d); date.setHours(0,0,0,0);
     return date >= today;
-  }).sort((a,b) => (a.date+a.time).localeCompare(b.date+b.time)).slice(0,3);
+  }).sort((a,b) => (a.date+(a.time || '00:00')).localeCompare(b.date+(b.time || '00:00'))).slice(0,5);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const maps = match => 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(match.address || [match.hall,match.city,'Deutschland'].filter(Boolean).join(', '));
   if (!upcoming.length) { target.innerHTML = '<div class="home-next-empty">Aktuell sind keine kommenden Spiele im hinterlegten Spielplan eingetragen.</div>'; return; }
@@ -125,22 +125,38 @@
     const venue = [match.hall,match.city].filter(Boolean).join(' · ');
     const status = match.isHome ? 'HEIMSPIEL' : 'AUSWÄRTSSPIEL';
     const opponent = match.isHome ? match.away : match.home;
+    const eventLabel = match.event ? ` · ${esc(match.event)}` : '';
     return `<article class="home-match ${match.club === 'HSG Renchtal' ? 'hsg-match' : 'tus-match'}">
       <div class="home-match-date"><b>${esc(day)}</b><small>${esc(month)}</small></div>
-      <div class="home-match-info"><strong>${esc(match.team)} · ${esc(match.club)}</strong><small>${esc(status)} · ${esc(match.time)} Uhr<br>${esc(match.home)} – ${esc(match.away)}<br>📍 ${esc(venue)}</small>
+      <div class="home-match-info"><strong>${esc(match.team)} · ${esc(match.club)}</strong><small>${esc(status)}${eventLabel} · ${esc(match.time || 'Uhrzeit folgt')} ${match.time ? 'Uhr' : ''}<br>${esc(match.home)} – ${esc(match.away)}<br>📍 ${esc(venue)}</small>
       <div class="home-match-actions"><a class="btn primary" href="${maps(match)}" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></div></div>
     </article>`;
   }).join('');
 })();
 
 
-// Team cards open the matching training schedule directly.
+// Team cards show exclusively the selected team's training sessions.
 (() => {
   const rows = [...document.querySelectorAll('[data-training-session]')];
   const panel = document.getElementById('trainingSelection');
   const title = document.getElementById('trainingSelectionName');
   if (!rows.length || !panel || !title) return;
+
+  // Exact team names are used on both the cards and schedule rows.
+  const teamNames = new Set(rows.map(row => row.dataset.trainingSession));
+
+  const updateSectionVisibility = () => {
+    document.querySelectorAll('#training .schedule').forEach(schedule => {
+      const hasVisibleSession = [...schedule.querySelectorAll('[data-training-session]')]
+        .some(row => !row.hidden);
+      schedule.hidden = !hasVisibleSession;
+      const heading = schedule.previousElementSibling;
+      if (heading && heading.classList.contains('section-head')) heading.hidden = !hasVisibleSession;
+    });
+  };
+
   const showTeam = team => {
+    if (!teamNames.has(team)) return;
     window.TUS_SHOW_PAGE?.('training');
     rows.forEach(row => {
       const match = row.dataset.trainingSession === team;
@@ -149,21 +165,34 @@
     });
     title.textContent = team;
     panel.hidden = false;
-    requestAnimationFrame(() => panel.scrollIntoView({behavior:'smooth',block:'start'}));
+    updateSectionVisibility();
+    requestAnimationFrame(() => panel.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   };
+
   const showAll = () => {
-    rows.forEach(row => { row.hidden = false; row.classList.remove('training-highlight'); });
+    rows.forEach(row => {
+      row.hidden = false;
+      row.classList.remove('training-highlight');
+    });
+    document.querySelectorAll('#training .schedule, #training .section-head').forEach(el => { el.hidden = false; });
     panel.hidden = true;
   };
+
   document.addEventListener('click', event => {
     const card = event.target.closest('[data-training-team]');
-    if (card && !event.target.closest('a,button')) { showTeam(card.dataset.trainingTeam); return; }
+    if (card) {
+      if (event.target.closest('a,button')) return;
+      showTeam(card.dataset.trainingTeam);
+      return;
+    }
     if (event.target.closest('[data-show-all-training]')) showAll();
   });
+
   document.addEventListener('keydown', event => {
     const card = event.target.closest('[data-training-team]');
     if (card && (event.key === 'Enter' || event.key === ' ')) {
-      event.preventDefault(); showTeam(card.dataset.trainingTeam);
+      event.preventDefault();
+      showTeam(card.dataset.trainingTeam);
     }
   });
 })();

@@ -53,3 +53,6 @@ Das Hintergrundbild wurde durch die bereitgestellte hochformatige TuS-Grafik ers
 
 
 Logo-Update: Das TuS-Oppenau-Vereinswappen wurde durch das vom Verein bereitgestellte Bild ersetzt. Der äußere weiße Bildhintergrund wurde transparent gemacht; die weißen Flächen innerhalb des Wappens bleiben erhalten.
+
+
+Trainingszeiten: Beim Antippen einer Mannschaft wird ausschließlich deren Trainingszeit bzw. werden alle Trainingszeiten dieser Mannschaft angezeigt. Über „Alle Trainingszeiten anzeigen“ kehrt man zur Gesamtübersicht zurück.
